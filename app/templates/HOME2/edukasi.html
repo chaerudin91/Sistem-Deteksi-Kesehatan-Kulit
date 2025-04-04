@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edukasi - Éclat Peau</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleEdukasi.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main.index') }}" class="logo">Éclat Peau</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.prediksi') }}">Prediksi</a></li>
+                <li><a href="{{ url_for('main.edukasi') }}">Edukasi</a></li>
+                <li><a href="{{ url_for('main.bahan') }}">Bahan</a></li>
+                <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Konten Edukasi -->
+    <div class="education-container">
+        <h1>Edukasi Kesehatan Kulit</h1>
+        <p>Pelajari bagaimana cara merawat kulit Anda untuk mendapatkan kulit yang sehat dan bercahaya. Kesehatan kulit bukan hanya soal penampilan, tetapi juga rasa percaya diri dan kenyamanan dalam kulit Anda sendiri. Di bawah ini, kami akan membahas tips-tips penting, rutinitas perawatan kulit, dan bahan-bahan yang dapat memberikan manfaat untuk berbagai jenis kulit.</p>
+
+        <section>
+            <h2>1. Kenali Jenis Kulit Anda</h2>
+            <p>Memahami jenis kulit Anda adalah langkah pertama dalam membangun rutinitas perawatan kulit yang efektif. Ada lima jenis kulit utama:</p>
+            <ul>
+                <li><strong>Kulit Normal:</strong> Kulit yang seimbang, tidak terlalu berminyak atau kering.</li>
+                <li><strong>Kulit Berminyak:</strong> Kulit yang memproduksi minyak berlebih, menyebabkan tampilan yang mengkilap.</li>
+                <li><strong>Kulit Kering:</strong> Kulit yang kekurangan kelembapan, sering terasa kering dan bersisik.</li>
+                <li><strong>Kulit Kombinasi:</strong> Gabungan antara kulit kering dan berminyak di area tertentu.</li>
+                <li><strong>Kulit Sensitif:</strong> Kulit yang rentan terhadap iritasi, kemerahan, dan ketidaknyamanan.</li>
+            </ul>
+            <p>Mengetahui jenis kulit Anda akan membantu Anda memilih produk yang tepat sesuai kebutuhan.</p>
+        </section>
+
+        <section>
+            <h2>2. Pentingnya Hidrasi</h2>
+            <p>Salah satu aspek terpenting dalam menjaga kulit yang sehat adalah memastikan kulit tetap terhidrasi dengan baik. Kulit yang dehidrasi dapat menyebabkan kulit tampak kusam, garis halus, dan masalah kulit lainnya.</p>
+            <p>Gunakan pelembap dengan bahan seperti <strong>Asam Hialuronat</strong> dan <strong>Gliserin</strong>, yang membantu mempertahankan kelembapan dan menjaga kulit tetap kenyal dan sehat.</p>
+        </section>
+
+        <section>
+            <h2>3. Sunscreen: Perlindungan Terbaik</h2>
+            <p>Paparan sinar matahari dapat menyebabkan penuaan dini, pigmentasi, bahkan kanker kulit. Selalu aplikasikan tabir surya dengan SPF minimal 30, bahkan saat hari mendung. Tabir surya melindungi kulit Anda dari sinar UV yang berbahaya dan menjaga keseimbangan alami kulit Anda.</p>
+            <p>Pilih tabir surya yang sesuai dengan jenis kulit Anda, apakah bebas minyak untuk kulit berminyak atau ekstra melembapkan untuk kulit kering.</p>
+        </section>
+
+        <section>
+            <h2>4. Rutinitas Perawatan Kulit</h2>
+            <p>Rutinitas perawatan kulit yang baik meliputi pembersihan, penyegaran, pelembapan, dan perlindungan dari kerusakan sinar matahari. Berikut adalah rutinitas dasar yang bisa diikuti:</p>
+            <ul>
+                <li><strong>Pembersih:</strong> Gunakan pembersih yang lembut untuk menghilangkan kotoran, minyak, dan makeup tanpa menghilangkan minyak alami kulit.</li>
+                <li><strong>Toner:</strong> Toner membantu menyeimbangkan pH kulit dan menghilangkan sisa-sisa kotoran yang tertinggal.</li>
+                <li><strong>Pelembap:</strong> Melembapkan kulit dan mengunci kelembapan.</li>
+                <li><strong>Tabir Surya:</strong> Melindungi kulit dari sinar UV.</li>
+            </ul>
+            <p>Untuk masalah kulit tertentu, Anda dapat menambahkan serum, masker, atau perawatan tambahan ke dalam rutinitas Anda.</p>
+        </section>
+
+        <section>
+            <h2>5. Bahan yang Harus Diperhatikan</h2>
+            <p>Ada beberapa bahan aktif yang terbukti efektif dalam meningkatkan kesehatan kulit:</p>
+            <ul>
+                <li><strong>Vitamin C:</strong> Mencerahkan kulit dan mengurangi noda hitam.</li>
+                <li><strong>Retinol:</strong> Mengurangi kerutan, garis halus, dan tanda-tanda penuaan.</li>
+                <li><strong>Niacinamide:</strong> Meningkatkan elastisitas kulit, memperbaiki fungsi penghalang kulit, dan meratakan warna kulit.</li>
+                <li><strong>Asam Salisilat:</strong> Cocok untuk kulit berminyak dan berjerawat, membantu membuka pori-pori dan mengurangi jerawat.</li>
+                <li><strong>Aloe Vera:</strong> Menenangkan kulit dan membantu peradangan serta kemerahan.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Pentingnya Tidur</h2>
+            <p>Kulit Anda melakukan perbaikan saat Anda tidur. Memastikan Anda tidur yang cukup (7-9 jam) dapat sangat meningkatkan penampilan dan kesehatan kulit Anda. Kurang tidur dapat menyebabkan stres yang memicu jerawat dan masalah kulit lainnya.</p>
+            <p>Cobalah untuk menetapkan rutinitas perawatan kulit malam hari yang mencakup produk yang melembapkan dan memberi nutrisi untuk mendukung proses pemulihan alami kulit Anda.</p>
+        </section>
+
+    </div>
+</body>
+</html>
