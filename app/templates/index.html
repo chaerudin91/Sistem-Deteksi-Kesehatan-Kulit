@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Éclat Peau</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleI.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<>
+    <!-- Navbar -->
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Éclat Peau</a>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="{{ url_for('main.prediksi') }}">Prediksi</a></li>
+                <li><a href="{{ url_for('main.edukasi') }}">Edukasi</a></li>
+                <li><a href="{{ url_for('main.bahan') }}">Bahan</a></li>
+                <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+   <!-- Employee Assistance Program Section -->
+<section class="eap-section">
+    <h1>Layanan Kesehatan Kulit Terlengkap untuk Anda</h1>
+    <p>Éclat Peau menyediakan layanan analisis kulit, Rekomendasi Bahan, dan edukasi mengenai perawatan kulit untuk menjaga kesehatan kulit Anda.</p>
+    <div class="service-tabs">
+        <button class="tab-button active" data-tab="analisis">Analisis Kulit</button>
+        <button class="tab-button" data-tab="konsultasi">Rekomendasi Bahan</button>
+        <button class="tab-button" data-tab="edukasi">Edukasi Perawatan Kulit</button>
+    </div>
+    <div class="service-content">
+        <div id="analisis" class="tab-content active">
+            <h2>Analisis Kulit</h2>
+            <p>Layanan analisis kulit untuk mengenali kondisi kulit Anda dengan lebih baik sebagai referensi perawatan yang sesuai.</p>
+            <ul>
+                <li>Analisis kondisi kulit kering, berminyak, berjerawat, dan lainnya.</li>
+                <li>Rekomendasi perawatan kulit sesuai dengan jenis kulit Anda.</li>
+            </ul>
+        </div>
+        <div id="konsultasi" class="tab-content">
+            <h2>Bahan - Bahan Kesehatan Kulit</h2>
+            <p>Perawatan kulit yang efektif dimulai dengan pemahaman yang tepat tentang jenis kulit Anda dan bahan-bahan yang paling cocok untuk kebutuhan tersebut.</p>
+            <ul>
+                <li>Kami menyediakan rekomendasi produk perawatan kulit yang terbuat dari bahan-bahan alami dan aman, yang akan membantu memperbaiki kondisi kulit Anda. </li>
+            </ul>
+        </div>
+        <div id="edukasi" class="tab-content">
+            <h2>Edukasi Perawatan Kulit</h2>
+            <p>Pelajari cara merawat kulit dengan benar melalui artikel dan tips dari ahli kecantikan serta dapat mengikuti tutorial yang ada.</p>
+            <ul>
+                <li>Panduan lengkap tentang cara merawat kulit sehari-hari.</li>
+                <li>Informasi tentang bahan aktif yang ada di produk perawatan kulit.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Instruction Section -->
+<div class="container">
+    <h1>Siap untuk Memulai Analisis Kulit?</h1>
+    <div class="instruction-section">
+        <div class="instruction">
+            <div class="icon">&#128065;</div>
+            <div class="text">
+                <h2>Lepaskan kacamata dan pastikan rambut tidak menutupi wajah</h2>
+                <p>Pastikan wajah terlihat jelas untuk hasil yang akurat.</p>
+            </div>
+        </div>
+        <div class="instruction">
+            <div class="icon">&#128248;</div>
+            <div class="text">
+                <h2>Gunakan Kamera Resolusi Tinggi</h2>
+                <p>Kamera dengan resolusi tinggi membantu menangkap kondisi kulit lebih detail.</p>
+            </div>
+        </div>
+        <div class="instruction">
+            <div class="icon">&#128377;</div>
+            <div class="text">
+                <h2>Pastikan Pencahayaan yang Baik</h2>
+                <p>Cahaya yang cukup membantu analisis bekerja optimal.</p>
+            </div>
+        </div>
+        <div class="instruction">
+            <div class="icon">&#128704;</div>
+            <div class="text">
+                <h2>Bersihkan Wajah dari Makeup</h2>
+                <p>Menghapus makeup membantu aplikasi mendeteksi kondisi alami kulit.</p>
+            </div>
+        </div>
+        <div class="instruction">
+            <div class="icon">&#128100;</div>
+            <div class="text">
+                <h2>Periksa Kebersihan Alat</h2>
+                <p>Pastikan alat yang digunakan (kamera, ponsel) dalam keadaan bersih.</p>
+            </div>
+        </div>
+        <div class="instruction">
+            <div class="icon">&#128205;</div>
+            <div class="text">
+                <h2>Pastikan Tidak Ada Gangguan</h2>
+                <p>Matikan notifikasi untuk menghindari gangguan saat melakukan analisis.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Skin Health News Section -->
+<div class="news-section">
+    <h2>Berita Terbaru Tentang Kesehatan Kulit</h2>
+    <div class="news-container">
+        <a href="https://www.halodoc.com/artikel/cuaca-panas-ekstrem-ini-berbagai-cara-menjaga-kesehatan-kulit?srsltid=AfmBOorFM7MTjnKAnI6mTb1OwVYhjoKecivyeJrjEH5LjFDw7BlWzuCY" target="_blank" class="news-item">
+            <img src="https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/04/27044920/Cuaca-Panas-Ekstrem-Ini-X-Cara-Menjaga-Kesehatan-Kulit.jpg" alt="Berita 1">
+            <p>Tips menjaga kesehatan kulit di musim panas.</p>
+        </a>
+        <a href="https://hellosehat.com/penyakit-kulit/perawatan-kulit/produk-skincare/" target="_blank" class="news-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw4eevAH2j7Flm7SKqO8HphsknJ_Wn9kKWpw&s" alt="Berita 2">
+            <p>Produk perawatan kulit yang wajib dimiliki.</p>
+        </a>
+        <a href="https://www.nakedpress.co/blogs/stories/5-tips-alami-menghilangkan-jerawat?gad_source=1&gclid=Cj0KCQjwsc24BhDPARIsAFXqAB3nD__YgvG7cNghYcIEXtCwyGcMwl_CEPJDp3e6TDCio0W5eY0VX-EaAleWEALw_wcB" target="_blank" class="news-item">
+            <img src="https://res.cloudinary.com/dk0z4ums3/image/upload/v1647052541/attached_image/6-cara-menghilangkan-jerawat-secara-alami-dan-cepat.jpg" alt="Berita 3">
+            <p>Cara mengatasi jerawat dengan bahan alami.</p>
+        </a>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script>
+function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('mobile');
+    navLinks.classList.toggle('active');
+}
+</script>
+</body>
+</html>
+
