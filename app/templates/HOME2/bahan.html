@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekomendasi Bahan - Éclat Peau</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleBahan.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main.index') }}" class="logo">Éclat Peau</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.prediksi') }}">Prediksi</a></li>
+                <li><a href="{{ url_for('main.edukasi') }}">Edukasi</a></li>
+                <li><a href="{{ url_for('main.bahan') }}">Bahan</a></li>
+                <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- Form Input Jenis Kulit -->
+<div class="container">
+    <h1>Rekomendasi Bahan untuk Kulit Anda</h1>
+    <p>Masukkan jenis kulit Anda untuk mendapatkan rekomendasi bahan-bahan yang cocok.</p>
+    
+    <form id="skin-form">
+        <label for="skin-type">Pilih Jenis Kulit:</label>
+        <select id="skin-type" name="skin-type" required>
+            <option value="berminyak">Kulit Berminyak</option>
+            <option value="berjerawat">Kulit Berjerawat</option>
+            <option value="kering">Kulit Kering</option>
+            <option value="normal">Kulit Normal</option>
+        </select>
+        <button type="submit">Tampilkan Rekomendasi</button>
+    </form>
+
+    <div id="recommendation" class="recommendation"></div>
+
+</div>
+
+<script>
+    // Fungsi untuk menampilkan rekomendasi bahan berdasarkan jenis kulit
+    document.getElementById("skin-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const skinType = document.getElementById("skin-type").value;
+        const recommendationDiv = document.getElementById("recommendation");
+        
+        let recommendations = "";
+
+        // Rekomendasi berdasarkan jenis kulit
+        if (skinType === "berminyak") {
+            recommendations = `
+                <h2>Rekomendasi Bahan untuk Kulit Berminyak:</h2>
+                <ul>
+                    <li><strong>Asam Salisilat:</strong> Membantu membersihkan pori-pori dan mengurangi minyak berlebih.</li>
+                    <li><strong>Tea Tree Oil:</strong> Memiliki sifat antibakteri dan membantu mengurangi jerawat.</li>
+                    <li><strong>Niacinamide:</strong> Membantu mengontrol minyak dan meratakan warna kulit.</li>
+                    <li><strong>Clay Mask:</strong> Menyerap minyak berlebih dan membersihkan pori-pori.</li>
+                </ul>
+                <h3>Tips Merawat Kulit Berminyak:</h3>
+                <ul>
+                    <li>Gunakan produk yang mengandung asam salisilat untuk membersihkan pori-pori dan mengurangi minyak.</li>
+                    <li>Rutin membersihkan wajah dengan sabun pembersih yang lembut, tanpa menghilangkan kelembapan alami kulit.</li>
+                    <li>Gunakan pelembap bebas minyak untuk menjaga keseimbangan kulit.</li>
+                </ul>
+            `;
+        } else if (skinType === "berjerawat") {
+            recommendations = `
+                <h2>Rekomendasi Bahan untuk Kulit Berjerawat:</h2>
+                <ul>
+                    <li><strong>Asam Salisilat:</strong> Membantu mengatasi jerawat dengan membuka pori-pori.</li>
+                    <li><strong>Retinol:</strong> Meningkatkan pergantian sel kulit dan mencegah komedo.</li>
+                    <li><strong>Tea Tree Oil:</strong> Antibakteri alami yang membantu mengurangi peradangan jerawat.</li>
+                    <li><strong>Azelaic Acid:</strong> Membantu mencerahkan noda bekas jerawat dan mengurangi peradangan.</li>
+                </ul>
+                <h3>Tips Merawat Kulit Berjerawat:</h3>
+                <ul>
+                    <li>Gunakan produk yang mengandung retinol untuk meningkatkan pergantian sel kulit dan mencegah jerawat.</li>
+                    <li>Pilih pembersih wajah yang lembut dan bebas alkohol.</li>
+                    <li>Hindari memencet jerawat agar tidak menyebabkan bekas luka atau peradangan.</li>
+                </ul>
+            `;
+        } else if (skinType === "kering") {
+            recommendations = `
+                <h2>Rekomendasi Bahan untuk Kulit Kering:</h2>
+                <ul>
+                    <li><strong>Asam Hialuronat:</strong> Menjaga kelembapan dan melembapkan kulit secara intensif.</li>
+                    <li><strong>Glicerin:</strong> Membantu menarik kelembapan ke dalam kulit dan mencegah dehidrasi.</li>
+                    <li><strong>Shea Butter:</strong> Melembapkan kulit kering dan menutrisi kulit dengan kaya akan lemak.</li>
+                    <li><strong>Kolagen:</strong> Memperbaiki elastisitas dan kelembapan kulit.</li>
+                </ul>
+                <h3>Tips Merawat Kulit Kering:</h3>
+                <ul>
+                    <li>Gunakan pelembap yang mengandung asam hialuronat untuk memberikan kelembapan yang tahan lama.</li>
+                    <li>Hindari mencuci wajah dengan air panas, karena dapat menghilangkan minyak alami kulit.</li>
+                    <li>Gunakan masker wajah yang kaya akan bahan pelembap seperti shea butter untuk menjaga kelembapan kulit.</li>
+                </ul>
+            `;
+        } else if (skinType === "normal") {
+            recommendations = `
+                <h2>Rekomendasi Bahan untuk Kulit Normal:</h2>
+                <ul>
+                    <li><strong>Vitamin C:</strong> Mencerahkan kulit dan memberikan perlindungan antioksidan.</li>
+                    <li><strong>Niacinamide:</strong> Memberikan hidrasi dan mengurangi tanda penuaan pada kulit.</li>
+                    <li><strong>Aloe Vera:</strong> Menenangkan kulit dan menjaga kelembapan kulit secara alami.</li>
+                    <li><strong>Squalane:</strong> Melembapkan dan melindungi kulit tanpa membuatnya terasa berminyak.</li>
+                </ul>
+                <h3>Tips Merawat Kulit Normal:</h3>
+                <ul>
+                    <li>Gunakan produk dengan vitamin C untuk mencerahkan kulit dan melindungi dari polusi.</li>
+                    <li>Pilih pelembap ringan yang tidak menyumbat pori-pori dan memberikan hidrasi optimal.</li>
+                    <li>Lakukan perawatan kulit secara rutin dengan bahan alami seperti aloe vera untuk menjaga keseimbangan kulit.</li>
+                </ul>
+            `;
+        }
+
+        // Tampilkan rekomendasi di halaman
+        recommendationDiv.innerHTML = recommendations;
+    });
+</script>
+</body>
+</html>
