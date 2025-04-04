@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Éclat Peau</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylepred.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding-top: 60px; /* Space for the navbar */
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .result-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .recommendation-section {
+            margin-top: 40px;
+        }
+
+        .recommendation-section h3 {
+            color: #4b6043;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .recommendation {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .recommendation-item {
+            background-color: #FFF8F0;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .recommendation-item h4 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .recommendation-item p {
+            color: #555;
+        }
+
+        .recommendation-item:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+        .predict-again {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4b6043;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .predict-again:hover {
+            background-color: #3a4d36;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main.index') }}" class="logo">Éclat Peau</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.prediksi') }}">Prediksi</a></li>
+                <li><a href="{{ url_for('main.edukasi') }}">Edukasi</a></li>
+                <li><a href="{{ url_for('main.bahan') }}">Bahan</a></li>
+                <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result-card">
+            <p>The predicted skin type is: <strong>{{ prediction }}</strong></p>
+            <img src="{{ url_for('static', filename='uploads/' + filepath) }}" alt="Uploaded Image" width="300">
+        </div>
+
+        <div class="recommendation-section">
+            <h3>Recommended Bahan</h3>
+            <div class="recommendation">
+                {% if prediction == 'berminyak' %}
+                    <div class="recommendation-item">
+                        <h4>Asam Salisilat</h4>
+                        <p>Membersihkan pori-pori dan mengurangi minyak berlebih.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Tea Tree Oil</h4>
+                        <p>Memiliki sifat antibakteri dan membantu mengurangi jerawat.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Niacinamide</h4>
+                        <p>Membantu mengontrol minyak dan meratakan warna kulit.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Clay Mask</h4>
+                        <p>Menyerap minyak berlebih dan membersihkan pori-pori.</p>
+                    </div>
+                {% elif prediction == 'berjerawat' %}
+                    <div class="recommendation-item">
+                        <h4>Asam Salisilat</h4>
+                        <p>Membantu mengatasi jerawat dengan membuka pori-pori.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Retinol</h4>
+                        <p>Meningkatkan pergantian sel kulit dan mencegah komedo.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Tea Tree Oil</h4>
+                        <p>Antibakteri alami yang membantu mengurangi peradangan jerawat.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Azelaic Acid</h4>
+                        <p>Membantu mencerahkan noda bekas jerawat dan mengurangi peradangan.</p>
+                    </div>
+                {% elif prediction == 'kering' %}
+                    <div class="recommendation-item">
+                        <h4>Asam Hialuronat</h4>
+                        <p>Menjaga kelembapan dan melembapkan kulit secara intensif.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Glicerin</h4>
+                        <p>Membantu menarik kelembapan ke dalam kulit dan mencegah dehidrasi.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Shea Butter</h4>
+                        <p>Melembapkan kulit kering dan menutrisi kulit dengan kaya akan lemak.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Kolagen</h4>
+                        <p>Memperbaiki elastisitas dan kelembapan kulit.</p>
+                    </div>
+                {% elif prediction == 'normal' %}
+                    <div class="recommendation-item">
+                        <h4>Vitamin C</h4>
+                        <p>Mencerahkan kulit dan memberikan perlindungan antioksidan.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Niacinamide</h4>
+                        <p>Memberikan hidrasi dan mengurangi tanda penuaan pada kulit.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Aloe Vera</h4>
+                        <p>Menenangkan kulit dan menjaga kelembapan kulit secara alami.</p>
+                    </div>
+                    <div class="recommendation-item">
+                        <h4>Squalane</h4>
+                        <p>Melembapkan dan melindungi kulit tanpa membuatnya terasa berminyak.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <a href="{{ url_for('main.prediksi') }}" class="predict-again">Predict Again</a>
+    </div>
+</body>
+</html>
