@@ -1,0 +1,95 @@
+/* Container */
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+form select {
+    padding: 8px;
+    font-size: 16px;
+}
+
+form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4a6646;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background-color: #4a6646;
+}
+
+/* Rekomendasi Bahan */
+.recommendation {
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.recommendation h2 {
+    color: #2C3E50;
+}
+
+.bahan-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.bahan-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.bahan-detail h3 {
+    margin: 0;
+    color: #4a6646;
+}
+
+.bahan-detail p {
+    margin: 5px 0;
+}
+
+/* Back Link */
+.back-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-link a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #4a6646;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}

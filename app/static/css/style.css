@@ -1,0 +1,229 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0eae0; /* Light background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    display: flex;
+    flex-direction: row; /* Default layout */
+    width: 80%; /* Increased width for the container */
+    max-width: 1200px;
+    background-color: #fff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Increased shadow for depth */
+    border-radius: 10px; /* Rounded corners for the container */
+    padding: 20px; /* Padding for better spacing inside the container */
+}
+
+.nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Decorative element */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+    border-radius: 10px;
+    z-index: -1; /* Place it behind other elements */
+}
+
+.content {
+    display: flex;
+    flex-direction: row; /* Default layout */
+    width: 100%;
+    padding: 20px;
+}
+
+/* Left section for the diagnostic image */
+.left {
+    flex: 1;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 36px;
+    color: #555;
+    margin-bottom: 20px; /* Space below the logo */
+}
+
+.image-container {
+    position: relative;
+}
+
+.image {
+    width: 100%; /* Adjust width for responsiveness */
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #4b6043; /* Add border to image */
+}
+
+.photo-diagnostic {
+    background-color: #4b6043;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* Space above the button */
+}
+
+.photo-diagnostic i {
+    margin-left: 5px; /* Adjust spacing for the icon */
+}
+
+/* Right section for the login form */
+.right {
+    flex: 1;
+    padding-left: 20px; /* Increased space for better alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.logo-image {
+    width: 100px; /* Adjust the logo size */
+    margin-bottom: 20px; /* Space below the logo image */
+}
+
+form {
+    width: 80%;
+    max-width: 300px; /* Limit form width */
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Full width for inputs */
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.btn {
+    background-color: #4b6043;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%; /* Full width for button */
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center; /* Center button text */
+}
+
+.btn:hover {
+    background-color: #3d5035; /* Darker color on hover */
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+p a {
+    color: #4b6043;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+        width: 90%; /* Adjust container width */
+    }
+
+    .content {
+        flex-direction: column; /* Stack content vertically */
+        padding: 10px; /* Reduce padding */
+    }
+
+    .left, .right {
+        border-right: none; /* Remove border on small screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .logo {
+        font-size: 24px; /* Reduce font size */
+    }
+
+    .image {
+        width: 80%; /* Scale down image width */
+        max-width: none; /* Remove max-width constraint */
+    }
+
+    .photo-diagnostic {
+        font-size: 14px; /* Reduce button font size */
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    h2 {
+        font-size: 20px; /* Reduce font size for headings */
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="password"],
+    .btn {
+        font-size: 14px; /* Adjust input and button font size */
+        padding: 10px; /* Adjust padding for inputs and buttons */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px; /* Further reduce logo font size */
+    }
+
+    .photo-diagnostic {
+        font-size: 12px; /* Further reduce button font size */
+    }
+
+    h2 {
+        font-size: 18px; /* Further reduce heading size */
+    }
+}

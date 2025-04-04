@@ -1,0 +1,191 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern font */
+}
+
+body {
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333;
+    font-size: 14px; /* Smaller base font size */
+    line-height: 1.5; /* Adjust line height for readability */
+    padding: 60px 20px 40px;
+}
+
+/* Containers */
+.container1, .container2 {
+    max-width: 900px;
+    margin: 20px auto; /* Reduce top margin */
+    padding: 20px; /* Reduce padding */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container1:hover, .container2:hover {
+    transform: translateY(-8px); /* Subtle hover effect */
+}
+
+/* Logo */
+.logo img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Main Content Section */
+.content h1 {
+    font-size: 30px; /* Slightly smaller heading */
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2a2a2a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.content p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Reduce gap between form fields */
+    margin-bottom: 30px;
+}
+
+form input, form textarea, form button {
+    width: 90%;
+    padding: 10px; /* Adjust padding */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #4a6646; /* Focus effect */
+}
+
+form button {
+    background-color: #4a6646;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+    padding: 12px 30px; /* Adjust padding */
+    border-radius: 30px;
+}
+
+form button:hover {
+    background-color: #3a5238;
+}
+
+/* FAQ Section */
+.faq-item {
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 15px; /* Adjust padding */
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.answer {
+    display: none;
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+    padding-left: 18px;
+}
+
+/* Back Link */
+.back-link {
+    margin-top: 20px;
+}
+
+.back-link a {
+    font-size: 14px;
+    color: #4a6646;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 2px solid #4a6646;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.back-link a:hover {
+    background-color: #4a6646;
+    color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 20px 15px; /* Reduce padding for small screens */
+    }
+
+    .container1, .container2 {
+        padding: 15px;
+    }
+
+    .content h1 {
+        font-size: 26px;
+    }
+
+    .content p {
+        font-size: 13px; /* Slightly smaller text */
+    }
+
+    form input, form textarea, form button {
+        width: 95%; /* Wider inputs for better alignment */
+    }
+
+    .back-link a {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .container1, .container2 {
+        padding: 10px;
+    }
+
+    .content h1 {
+        font-size: 22px; /* Further reduce heading size */
+    }
+
+    .content p, .faq-item {
+        font-size: 12px; /* Smaller text for mobile */
+    }
+
+    .logo img {
+        max-width: 120px; /* Smaller logo */
+    }
+
+    .back-link a {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+}
