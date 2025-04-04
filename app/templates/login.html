@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Éclat Peau</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="{{ url_for('main.about') }}">About Us</a>     
+            <a href="{{ url_for('main.contact') }}">Contact Us</a>  
+            <a href="{{ url_for('main.faq') }}">FAQ</a>     
+        </div>
+
+        <div class="content">
+            <div class="left">
+                <h1 class="logo">Éclat Peau</h1>
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='image/gambar1.jpg') }}" alt="Diagnostic Image" class="image">
+                </div>
+                <button class="photo-diagnostic">Diagnostic Photo <i class="fas fa-camera"></i></button>
+            </div>
+
+            <div class="right">
+                <h2>Selamat Datang di Éclat Peau</h2>
+                <img src="{{ url_for('static', filename='image/logo.jpg') }}" alt="Logo" class="logo-image"> 
+                <form method="POST">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit" class="btn">LOGIN</button>
+                    <p>Don't have an account? <a href="{{ url_for('main.register') }}">Register</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
