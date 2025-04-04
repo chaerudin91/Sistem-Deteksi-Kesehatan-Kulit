@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Éclat Peau</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleh.css') }}">
+
+    <script>
+        function toggleAnswer(index) {
+            const answer = document.getElementById(`answer-${index}`);
+            if (answer.style.display === "block") {
+                answer.style.display = "none"; // Sembunyikan jawaban
+            } else {
+                answer.style.display = "block"; // Tampilkan jawaban
+            }
+        }
+    </script>
+</head>
+
+<body1>
+    <div class="container">
+        <h1>Frequently Asked Questions (FAQ)</h1>
+        
+        <div class="faq-item" onclick="toggleAnswer(1)">
+            <strong>What is Éclat Peau?</strong>
+        </div>
+        <div class="answer" id="answer-1">
+            Éclat Peau is a skincare solution designed to help individuals achieve their skin goals through personalized recommendations and guidance.
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(2)">
+            <strong>How does the system work?</strong>
+        </div>
+        <div class="answer" id="answer-2">
+            The system analyzes uploaded images and provides tailored skincare advice based on individual skin conditions and needs.
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(3)">
+            <strong>Do I need to register to use Éclat Peau?</strong>
+        </div>
+        <div class="answer" id="answer-3">
+            Yes, registration is required to access personalized features and save your preferences.
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(4)">
+            <strong>Are there any limitations on the type of images that can be uploaded?</strong>
+        </div>
+        <div class="answer" id="answer-4">
+            We recommend using clear, well-lit images of your face without filters to ensure accurate analysis.
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(5)">
+            <strong>Are the ingredient recommendations universal?</strong>
+        </div>
+        <div class="answer" id="answer-5">
+            Ingredient recommendations are personalized based on your skin type and conditions, so they may vary between users.
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(6)">
+            <strong>Is the system safe to use?</strong>
+        </div>
+        <div class="answer" id="answer-6">
+            Yes, the system is designed with user safety in mind, and we prioritize data privacy and security.
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(7)">
+            <strong>What should I do if I’m not satisfied with the recommendations?</strong>
+        </div>
+        <div class="answer" id="answer-7">
+            If you're not satisfied, we encourage you to reach out to our support team for further assistance and adjustments.
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(8)">
+            <strong>Can Éclat Peau be used for all skin types?</strong>
+        </div>
+        <div class="answer" id="answer-8">
+            Yes, Éclat Peau is designed to cater to all skin types, providing tailored solutions for each individual.
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(9)">
+            <strong>Where can I find more information?</strong>
+        </div>
+        <div class="answer" id="answer-9">
+            More information can be found on our website or by contacting our support team.
+        </div>
+
+        <div class="faq-item" onclick="toggleAnswer(10)">
+            <strong>How can I reach the support team?</strong>
+        </div>
+        <div class="answer" id="answer-10">
+            You can reach our support team via the contact page on our website or through our social media channels.
+        </div>
+
+        <div class="back-link">
+            <a href="{{ url_for('main.login') }}">Back to Login</a> <!-- Tautan kembali ke halaman login -->
+        </div>
+    </div>
+</body1>
+</html>
