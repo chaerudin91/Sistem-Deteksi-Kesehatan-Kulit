@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image for Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylepred.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{{ url_for('main.index') }}" class="logo">Éclat Peau</a>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('main.index') }}">Home</a></li>
+                <li><a href="{{ url_for('main.prediksi') }}">Prediksi</a></li>
+                <li><a href="{{ url_for('main.edukasi') }}">Edukasi</a></li>
+                <li><a href="{{ url_for('main.bahan') }}">Bahan</a></li>
+                <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Upload Image Section -->
+    <div class="upload-card">
+        <h1>Upload an Image for Prediction</h1>
+    
+        <!-- Form for Image Upload -->
+        <form id="imageUploadForm" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" id="fileInput">
+            <button type="submit">Upload</button>
+        </form>
+    
+        <h1>Capture and Upload Image</h1>
+        
+        <!-- Button to Open Camera -->
+        <button id="openCameraButton">Open Camera</button>
+        <video id="video" autoplay style="display:none;"></video>
+        <button id="capture" style="display:none;">Capture</button>
+        <canvas id="canvas" style="display:none;"></canvas>
+    </div>
+
+    <script>
+        const openCameraButton = document.getElementById('openCameraButton');
+        const video = document.getElementById('video');
+        const captureButton = document.getElementById('capture');
+        const fileInput = document.getElementById('fileInput');
+        const canvas = document.getElementById('canvas');
+        const form = document.getElementById('imageUploadForm');
+
+        // Function to start the camera
+        openCameraButton.addEventListener('click', () => {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+                    video.style.display = 'block'; // Show video element
+                    openCameraButton.style.display = 'none'; // Hide open camera button
+                    captureButton.style.display = 'inline-block'; // Show capture button
+                })
+                .catch(error => {
+                    console.error("Error accessing the camera:", error);
+                });
+        });
+
+        // Capture image and add it to file input
+        captureButton.addEventListener('click', () => {
+            const context = canvas.getContext('2d');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            
+            // Convert canvas image to Blob and set it to file input
+            canvas.toBlob(blob => {
+                const file = new File([blob], "captured_image.png", { type: 'image/png' });
+
+                // Create a new DataTransfer object and set the file
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+
+                // Assign the file to the file input
+                fileInput.files = dataTransfer.files;
+
+                alert('Image captured and added to the file input. You can now upload it.');
+            }, 'image/png');
+        });
+    </script>
+</body>
+</html>
