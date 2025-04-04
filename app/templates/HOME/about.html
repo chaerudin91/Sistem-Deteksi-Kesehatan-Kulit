@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Éclat Peau</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleh.css') }}"><!-- Menambahkan Font Awesome -->
+</head>
+<body>
+    <div class="container1">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='image/Logo.jpg') }}" alt="Éclat Peau Logo"> <!-- Ganti dengan path logo Anda -->
+        </div>
+        <div class="content">
+            <h1>About Us</h1>
+            <p>Welcome to Éclat Peau! We are dedicated to providing the best skincare solutions to our customers. Our team consists of skincare experts who are passionate about helping you achieve your skin goals. We believe that everyone deserves to feel confident in their own skin, and our mission is to provide personalized skincare routines that address your unique needs.</p>
+            <p>At Éclat Peau, we use only the highest quality ingredients, backed by scientific research, to ensure that our products are effective and safe for all skin types. Whether you are dealing with dryness, oiliness, or other skin concerns, we are here to guide you on your journey to healthier skin.</p>
+            <p>Join us on this journey, and let us help you unlock the secret to radiant, beautiful skin. Thank you for choosing Éclat Peau!</p>
+        </div>
+
+        <div class="back-link">
+            <a href="{{ url_for('main.login') }}">Back to Login</a> <!-- Tautan kembali ke halaman login -->
+        </div>
+    </div>
+</body>
+</html>
